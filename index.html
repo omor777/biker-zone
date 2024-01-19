@@ -19,6 +19,12 @@
           @apply block;
         }
       }
+      @layer utilities {
+        .max-content {
+          max-width: 1130px;
+          margin: 0 auto;
+        }
+      }
     </style>
     <!-- ? tailwind customizing -->
     <script>
@@ -52,6 +58,12 @@
             fontFamily: {
               poppins: ["Poppins", "sans-serif"],
             },
+            borderRadius: {
+              5: "0.3125rem",
+            },
+            screens: {
+              lg: "960px",
+            },
           },
         },
       };
@@ -60,16 +72,16 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,300&display=swap"
       rel="stylesheet"
     />
 
     <!-- ? end -->
   </head>
   <body class="font-poppins">
-    <header class="bg-header-bg h-screen">
+    <header class="bg-header-bg">
       <nav
-        class="max-w-[1130px] mx-auto flex items-center justify-between px-5 md:px-0 pt-9 md:pt-11"
+        class="max-w-[1130px] mx-auto flex items-center justify-between px-5 lg:px-0 pt-9 md:pt-11"
       >
         <h3 class="logo text-2xl md:text-4xl text-white font-bold">Go Ride</h3>
         <div>
@@ -133,7 +145,7 @@
               </li>
               <li>
                 <button
-                  class="md:py-3 py-2 px-5 md:px-8 bg-primary rounded text-white font-medium transition-colors duration-300 hover:bg-orange-700"
+                  class="md:py-3 py-2 px-5 md:px-8 bg-primary rounded text-white font-medium transition-colors duration-300 hover:bg-orange-700 md:ml-16"
                 >
                   Login
                 </button>
@@ -142,6 +154,40 @@
           </div>
         </div>
       </nav>
+
+      <!-- ? hero section start here -->
+      <section class="max-w-[1130px] mx-auto mt-20 pb-9 lg:pb-24">
+        <div class="hero">
+          <div class="hero-content flex-col-reverse lg:flex-row-reverse">
+            <img
+              src="./images/others/hondaCbr.png"
+              class="max-w-full block mt-14 lg:mt-0"
+            />
+            <div class="lg:max-w-xl">
+              <p class="text-white/70 text-sm font-light mb-4">
+                Computer-controlled digital transistorized with electronic
+                advance
+              </p>
+              <h1
+                class="lg:text-5xl text-4xl sm:text-[2.5rem] font-semibold text-white"
+              >
+                Honda CBR 300R
+              </h1>
+              <p class="py-5 text-white/70 font-light">
+                Amet minim mollit non deserunt ullamco est sit aliqua dolor do
+                amet sint. Velit officia consequat duis enim velit mollit.
+                Exercitation veniam consequat sunt nostrud amet.
+              </p>
+              <button
+                class="btn text-base bg-primary border-primary text-white font-medium rounded-5 px-8 lg:px-12 hover:bg-orange-600 hover:border-orange-600"
+              >
+                Purchase
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- ? hero section end here -->
     </header>
   </body>
 </html>
