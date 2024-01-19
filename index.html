@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tailwind Practice</title>
+    <title>Biker Zone</title>
     <link rel="stylesheet" href="src/style.css" />
     <!-- ? tailwind cdn link and daisy khala -->
     <link
@@ -15,6 +15,9 @@
     <!-- ? custom css -->
     <style type="text/tailwindcss">
       @layer components {
+        .toggleBtn:focus + div {
+          @apply block;
+        }
       }
     </style>
     <!-- ? tailwind customizing -->
@@ -25,6 +28,7 @@
             colors: {
               primary: "#E76F51",
               star: "#ffa534",
+              "header-bg": "#264653",
             },
             borderRadius: {
               5: "0.3125rem",
@@ -45,166 +49,99 @@
             width: {
               322: "20.125rem",
             },
+            fontFamily: {
+              poppins: ["Poppins", "sans-serif"],
+            },
           },
         },
       };
     </script>
 
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+
     <!-- ? end -->
   </head>
-  <body>
-    <div
-      class="container px-5 md:px-0 gap-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
-    >
-      <!-- first card -->
-      <div class="card border border-[#DEDEDE] rounded px-9 py-10">
-        <figure>
-          <img class="w-[9.375rem]" src="./images/others/user-1.png" />
-        </figure>
-        <div class="card-body border-spacing-y-4">
-          <p class="text-center">
-            Slate helps you see how many more days you need to work to reach
-            your financial goal for the month and year.
-          </p>
-
-          <div class="rating mx-auto space-x-2">
-            <input
-              type="radio"
-              name="rating-2"
-              class="mask mask-star-2 bg-star"
-            />
-            <input
-              type="radio"
-              name="rating-2"
-              class="mask mask-star-2 bg-star"
-            />
-            <input
-              type="radio"
-              name="rating-2"
-              class="mask mask-star-2 bg-star"
-            />
-            <input
-              type="radio"
-              name="rating-2"
-              class="mask mask-star-2 bg-star"
-              checked
-            />
-            <input
-              type="radio"
-              name="rating-2"
-              class="mask mask-star-2 bg-star"
-            />
+  <body class="font-poppins">
+    <header class="bg-header-bg h-screen">
+      <nav
+        class="max-w-[1130px] mx-auto flex items-center justify-between px-5 md:px-0 pt-9 md:pt-11"
+      >
+        <h3 class="logo text-2xl md:text-4xl text-white font-bold">Go Ride</h3>
+        <div>
+          <button class="block toggleBtn md:hidden">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="36"
+              height="36"
+              viewBox="0 0 36 36"
+              fill="none"
+            >
+              <path
+                d="M6 19.5C6.82843 19.5 7.5 18.8284 7.5 18C7.5 17.1716 6.82843 16.5 6 16.5C5.17157 16.5 4.5 17.1716 4.5 18C4.5 18.8284 5.17157 19.5 6 19.5Z"
+                fill="white"
+              />
+              <path
+                d="M30.09 16.5H11.91C11.1313 16.5 10.5 17.1313 10.5 17.91V18.09C10.5 18.8687 11.1313 19.5 11.91 19.5H30.09C30.8687 19.5 31.5 18.8687 31.5 18.09V17.91C31.5 17.1313 30.8687 16.5 30.09 16.5Z"
+                fill="white"
+              />
+              <path
+                d="M30.09 24H5.91C5.13128 24 4.5 24.6313 4.5 25.41V25.59C4.5 26.3687 5.13128 27 5.91 27H30.09C30.8687 27 31.5 26.3687 31.5 25.59V25.41C31.5 24.6313 30.8687 24 30.09 24Z"
+                fill="white"
+              />
+              <path
+                d="M30.09 9H5.91C5.13128 9 4.5 9.63128 4.5 10.41V10.59C4.5 11.3687 5.13128 12 5.91 12H30.09C30.8687 12 31.5 11.3687 31.5 10.59V10.41C31.5 9.63128 30.8687 9 30.09 9Z"
+                fill="white"
+              />
+            </svg>
+          </button>
+          <div class="md:block hidden">
+            <ul
+              class="flex gap-x-7 md:gap-x-9 gap-y-4 items-center flex-wrap md:relative justify-center absolute w-full md:w-auto left-0 top-20 md:top-0"
+            >
+              <li>
+                <a
+                  class="text-white font-medium transition-colors duration-300 ease-out hover:text-primary"
+                  href="#"
+                  >Home</a
+                >
+              </li>
+              <li>
+                <a
+                  class="text-white font-medium transition-colors duration-300 ease-out hover:text-primary"
+                  href="#"
+                  >Shop</a
+                >
+              </li>
+              <li>
+                <a
+                  class="text-white font-medium transition-colors duration-300 ease-out hover:text-primary"
+                  href="#"
+                  >News</a
+                >
+              </li>
+              <li>
+                <a
+                  class="text-white font-medium transition-colors duration-300 ease-out hover:text-primary"
+                  href="#"
+                  >Contact</a
+                >
+              </li>
+              <li>
+                <button
+                  class="md:py-3 py-2 px-5 md:px-8 bg-primary rounded text-white font-medium transition-colors duration-300 hover:bg-orange-700"
+                >
+                  Login
+                </button>
+              </li>
+            </ul>
           </div>
-          <p
-            class="text-[#23A6F0] tracking-[0.0125rem] text-sm font-semibold text-center"
-          >
-            Regina Miles
-          </p>
-          <p class="text-center text-sm tracking-[0.0125rem] font-semibold">
-            Banker
-          </p>
         </div>
-      </div>
-
-      <!-- first card -->
-      <div class="card border border-[#DEDEDE] rounded px-9 py-10">
-        <figure>
-          <img class="w-[9.375rem]" src="./images/others/user-2.png" />
-        </figure>
-        <div class="card-body border-spacing-y-4">
-          <p class="text-center">
-            Slate helps you see how many more days you need to work to reach
-            your financial goal for the month and year.
-          </p>
-
-          <div class="rating mx-auto space-x-2">
-            <input
-              type="radio"
-              name="rating-2"
-              class="mask mask-star-2 bg-star"
-            />
-            <input
-              type="radio"
-              name="rating-2"
-              class="mask mask-star-2 bg-star"
-            />
-            <input
-              type="radio"
-              name="rating-2"
-              class="mask mask-star-2 bg-star"
-            />
-            <input
-              type="radio"
-              name="rating-2"
-              class="mask mask-star-2 bg-star"
-              checked
-            />
-            <input
-              type="radio"
-              name="rating-2"
-              class="mask mask-star-2 bg-star"
-            />
-          </div>
-          <p
-            class="text-[#23A6F0] tracking-[0.0125rem] text-sm font-semibold text-center"
-          >
-            Regina Miles
-          </p>
-          <p class="text-center text-sm tracking-[0.0125rem] font-semibold">
-            Banker
-          </p>
-        </div>
-      </div>
-
-      <!-- second card -->
-      <div class="card border border-[#DEDEDE] rounded px-9 py-10">
-        <figure>
-          <img class="w-[9.375rem]" src="./images/others/user-3.png" />
-        </figure>
-        <div class="card-body border-spacing-y-4">
-          <p class="text-center">
-            Slate helps you see how many more days you need to work to reach
-            your financial goal for the month and year.
-          </p>
-
-          <div class="rating mx-auto space-x-2">
-            <input
-              type="radio"
-              name="rating-2"
-              class="mask mask-star-2 bg-star"
-            />
-            <input
-              type="radio"
-              name="rating-2"
-              class="mask mask-star-2 bg-star"
-            />
-            <input
-              type="radio"
-              name="rating-2"
-              class="mask mask-star-2 bg-star"
-            />
-            <input
-              type="radio"
-              name="rating-2"
-              class="mask mask-star-2 bg-star"
-              checked
-            />
-            <input
-              type="radio"
-              name="rating-2"
-              class="mask mask-star-2 bg-star"
-            />
-          </div>
-          <p
-            class="text-[#23A6F0] tracking-[0.0125rem] text-sm font-semibold text-center"
-          >
-            Regina Miles
-          </p>
-          <p class="text-center text-sm tracking-[0.0125rem] font-semibold">
-            Banker
-          </p>
-        </div>
-      </div>
-    </div>
+      </nav>
+    </header>
   </body>
 </html>
