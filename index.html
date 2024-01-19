@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html data-theme="light" lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tailwind Practice</title>
+    <link rel="stylesheet" href="src/style.css" />
+    <!-- ? tailwind cdn link and daisy khala -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.6.0/dist/full.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- ? custom css -->
+    <style type="text/tailwindcss">
+      @layer components {
+      }
+    </style>
+    <!-- ? tailwind customizing -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#E76F51",
+              star: "#ffa534",
+            },
+            borderRadius: {
+              5: "0.3125rem",
+            },
+            container: {
+              center: true,
+
+              screens: {
+                sm: "640px",
+                md: "768px",
+                lg: "1024px",
+                xl: "1130px",
+              },
+            },
+            fontSize: {
+              28: "1.75rem",
+            },
+            width: {
+              322: "20.125rem",
+            },
+          },
+        },
+      };
+    </script>
+
+    <!-- ? end -->
+  </head>
+  <body>
+    <div
+      class="container px-5 md:px-0 gap-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
+    >
+      <!-- first card -->
+      <div class="card border border-[#DEDEDE] rounded px-9 py-10">
+        <figure>
+          <img class="w-[9.375rem]" src="./images/others/user-1.png" />
+        </figure>
+        <div class="card-body border-spacing-y-4">
+          <p class="text-center">
+            Slate helps you see how many more days you need to work to reach
+            your financial goal for the month and year.
+          </p>
+
+          <div class="rating mx-auto space-x-2">
+            <input
+              type="radio"
+              name="rating-2"
+              class="mask mask-star-2 bg-star"
+            />
+            <input
+              type="radio"
+              name="rating-2"
+              class="mask mask-star-2 bg-star"
+            />
+            <input
+              type="radio"
+              name="rating-2"
+              class="mask mask-star-2 bg-star"
+            />
+            <input
+              type="radio"
+              name="rating-2"
+              class="mask mask-star-2 bg-star"
+              checked
+            />
+            <input
+              type="radio"
+              name="rating-2"
+              class="mask mask-star-2 bg-star"
+            />
+          </div>
+          <p
+            class="text-[#23A6F0] tracking-[0.0125rem] text-sm font-semibold text-center"
+          >
+            Regina Miles
+          </p>
+          <p class="text-center text-sm tracking-[0.0125rem] font-semibold">
+            Banker
+          </p>
+        </div>
+      </div>
+
+      <!-- first card -->
+      <div class="card border border-[#DEDEDE] rounded px-9 py-10">
+        <figure>
+          <img class="w-[9.375rem]" src="./images/others/user-2.png" />
+        </figure>
+        <div class="card-body border-spacing-y-4">
+          <p class="text-center">
+            Slate helps you see how many more days you need to work to reach
+            your financial goal for the month and year.
+          </p>
+
+          <div class="rating mx-auto space-x-2">
+            <input
+              type="radio"
+              name="rating-2"
+              class="mask mask-star-2 bg-star"
+            />
+            <input
+              type="radio"
+              name="rating-2"
+              class="mask mask-star-2 bg-star"
+            />
+            <input
+              type="radio"
+              name="rating-2"
+              class="mask mask-star-2 bg-star"
+            />
+            <input
+              type="radio"
+              name="rating-2"
+              class="mask mask-star-2 bg-star"
+              checked
+            />
+            <input
+              type="radio"
+              name="rating-2"
+              class="mask mask-star-2 bg-star"
+            />
+          </div>
+          <p
+            class="text-[#23A6F0] tracking-[0.0125rem] text-sm font-semibold text-center"
+          >
+            Regina Miles
+          </p>
+          <p class="text-center text-sm tracking-[0.0125rem] font-semibold">
+            Banker
+          </p>
+        </div>
+      </div>
+
+      <!-- second card -->
+      <div class="card border border-[#DEDEDE] rounded px-9 py-10">
+        <figure>
+          <img class="w-[9.375rem]" src="./images/others/user-3.png" />
+        </figure>
+        <div class="card-body border-spacing-y-4">
+          <p class="text-center">
+            Slate helps you see how many more days you need to work to reach
+            your financial goal for the month and year.
+          </p>
+
+          <div class="rating mx-auto space-x-2">
+            <input
+              type="radio"
+              name="rating-2"
+              class="mask mask-star-2 bg-star"
+            />
+            <input
+              type="radio"
+              name="rating-2"
+              class="mask mask-star-2 bg-star"
+            />
+            <input
+              type="radio"
+              name="rating-2"
+              class="mask mask-star-2 bg-star"
+            />
+            <input
+              type="radio"
+              name="rating-2"
+              class="mask mask-star-2 bg-star"
+              checked
+            />
+            <input
+              type="radio"
+              name="rating-2"
+              class="mask mask-star-2 bg-star"
+            />
+          </div>
+          <p
+            class="text-[#23A6F0] tracking-[0.0125rem] text-sm font-semibold text-center"
+          >
+            Regina Miles
+          </p>
+          <p class="text-center text-sm tracking-[0.0125rem] font-semibold">
+            Banker
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
