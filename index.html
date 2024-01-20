@@ -19,13 +19,7 @@
           @apply block;
         }
         .section-title {
-          @apply text-48 font-semibold text-center capitalize;
-        }
-      }
-      @layer utilities {
-        .max-container {
-          max-width: 1130px;
-        
+          @apply font-semibold text-center capitalize;
         }
       }
     </style>
@@ -33,6 +27,15 @@
     <script>
       tailwind.config = {
         theme: {
+          container: {
+            center: true,
+          },
+          screens: {
+            sm: "640px",
+            md: "768px",
+            lg: "992px",
+            xl: "1180px",
+          },
           extend: {
             colors: {
               primary: "#E76F51",
@@ -41,16 +44,6 @@
             },
             borderRadius: {
               5: "0.3125rem",
-            },
-            container: {
-              center: true,
-
-              screens: {
-                sm: "640px",
-                md: "768px",
-                lg: "1024px",
-                xl: "1130px",
-              },
             },
             gridTemplateColumns: {
               "featured-card":
@@ -84,12 +77,12 @@
       rel="stylesheet"
     />
 
-    <!-- ? end -->
+    <!--  end -->
   </head>
   <body class="font-poppins">
     <header class="bg-header-bg">
       <nav
-        class="max-container mx-auto flex items-center justify-between px-5 lg:px-0 pt-9 md:pt-11"
+        class="container flex items-center justify-between px-5 lg:px-0 pt-9 md:pt-11"
       >
         <h3 class="logo text-2xl md:text-4xl text-white font-bold">Go Ride</h3>
         <div>
@@ -163,8 +156,8 @@
         </div>
       </nav>
 
-      <!-- ? hero section start here -->
-      <section class="mt-20 max-container mx-auto pb-9 lg:pb-24">
+      <!--  hero section start here -->
+      <section class="mt-20 container pb-9 lg:pb-24">
         <div class="hero">
           <div class="hero-content flex-col-reverse lg:flex-row-reverse">
             <img
@@ -198,31 +191,322 @@
       <!-- ? hero section end here -->
     </header>
     <main>
-      <!-- ? featured bike section -->
-      <section class="mt-16 max-container mx-auto">
-        <h2 class="section-title">Fetured Bikes In This Year</h2>
+      <!--  featured bike section -->
+      <section class="mt-24 lg:mt-16 container">
+        <h2 class="section-title text-2xl sm:max-lg:text-4xl lg:text-5xl">
+          Fetured Bikes In This Year
+        </h2>
         <p class="text-sm font-semibold text-primary text-center">
           Best bike collection
         </p>
         <div
           class="h-[1px] w-14 bg-primary mx-auto items-center justify-center"
         ></div>
-
+        <!-- card container -->
         <div
-          class="flex flex-wrap items-center justify-center gap-[125px] mt-24 lg:mt-28"
+          class="mt-24 lg:mt-28 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-[138px]"
         >
           <!-- ? single card -->
-          <div>
-            <img src="./images/bike1.png" alt="" />
+          <div class="">
+            <img class="block mx-auto" src="./images/bike1.png" alt="" />
           </div>
-          <div>
-            <img src="./images/bike2.png" alt="" />
+          <div class="">
+            <img class="block mx-auto" src="./images/bike2.png" alt="" />
           </div>
-          <div>
-            <img src="./images/bike3.png" alt="" />
+          <div class="">
+            <img class="block mx-auto" src="./images/bike3.png" alt="" />
           </div>
         </div>
       </section>
+
+      <!-- Latest News section -->
+      <section class="container mt-20 md:mt-40 px-6 lg:px-0">
+        <h3
+          class="text-[#0A0826] text-center text-4xl md:text-5xl font-semibold capitalize mb-12"
+        >
+          Latest News
+        </h3>
+        <div class="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          <!-- single card -->
+          <div class="rounded-lg p-5 shadow-md">
+            <figure>
+              <img
+                class="obj block w-full object-cover"
+                src="../images/others/latest1.png"
+                alt=""
+              />
+            </figure>
+            <div class="md:mt-10 mt-8">
+              <h3
+                class="md:text-[28px] text-2xl leading-9 font-semibold md:leading-10"
+              >
+                Ducati XDIAVEL S-73
+              </h3>
+              <p class="leading-8 text-[#6C6C6C] text-sm sm:text-base">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lacus,
+                fermentum amet faucibus sed id nisi lectus at.
+              </p>
+              <button
+                class="mt-10 rounded-[6px] border border-orange-500 px-6 py-3 font-medium duration-300 hover:bg-orange-500 hover:text-white"
+              >
+                Read More
+              </button>
+            </div>
+          </div>
+          <!-- single card -->
+          <div class="rounded-lg p-5 shadow-md">
+            <figure>
+              <img
+                class="block w-full object-cover"
+                src="../images/others/latest2.png"
+                alt=""
+              />
+            </figure>
+            <div class="md:mt-10 mt-8">
+              <h3
+                class="md:text-[28px] text-2xl leading-9 font-semibold md:leading-10"
+              >
+                Motorcycles & Scooters
+              </h3>
+              <p class="leading-8 text-[#6C6C6C] text-sm sm:text-base">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lacus,
+                fermentum amet faucibus sed id nisi lectus at.
+              </p>
+              <button
+                class="mt-10 rounded-[6px] border border-orange-500 px-6 py-3 font-medium duration-300 hover:bg-orange-500 hover:text-white"
+              >
+                Read More
+              </button>
+            </div>
+          </div>
+          <!-- single card -->
+          <div class="rounded-lg p-5 shadow-md">
+            <figure>
+              <img
+                class="block w-full object-cover"
+                src="../images/others/latest3.png"
+                alt=""
+              />
+            </figure>
+            <div class="md:mt-10 mt-8">
+              <h3
+                class="md:text-[28px] text-2xl leading-9 font-semibold md:leading-10"
+              >
+                2021 Honda CBR500R3
+              </h3>
+              <p class="leading-8 text-[#6C6C6C] text-sm sm:text-base">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lacus,
+                fermentum amet faucibus sed id nisi lectus at.
+              </p>
+              <button
+                class="mt-10 rounded-[6px] border border-orange-500 px-6 py-3 font-medium duration-300 hover:bg-orange-500 hover:text-white"
+              >
+                Read More
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- happy client section -->
+
+      <section class="container mt-20 lg:mt-40 px-6 lg:px-0">
+        <h3
+          class="text-[#0A0826] mb-20 text-center text-4xl lg:text-5xl font-semibold md:mb-[52px]"
+        >
+          Happy <span class="text-[#E76F51]">Clients says</span>
+        </h3>
+
+        <!-- card container -->
+        <div
+          class="grid grid-cols-1 gap-5 lg:gap-11 lg:grid-cols-3 sm:grid-cols-2"
+        >
+          <!-- single card -->
+          <div
+            class="space-y-7 cursor-pointer py-10 px-9 rounded-[5px] border border-[#DEDEDE]"
+          >
+            <figure class="flex justify-center items-center">
+              <img
+                class="sm:w-[150px] w-[250px] object-cover border border-[#BDBDBD] rounded-full"
+                src="./images/others/user-1.png"
+                alt=""
+              />
+            </figure>
+
+            <!-- card desc -->
+            <div class="space-y-4 flex flex-col items-center justify-center">
+              <p class="tracking-[0.2px] text-[#6C6C6C] text-center">
+                Slate helps you see how many more days you need to work to reach
+                your financial goal for the month and year.
+              </p>
+
+              <div class="rating">
+                <input
+                  type="radio"
+                  name="rating-2"
+                  class="mask mask-star-2 bg-orange-400"
+                />
+                <input
+                  type="radio"
+                  name="rating-2"
+                  class="mask mask-star-2 bg-orange-400"
+                />
+                <input
+                  type="radio"
+                  name="rating-2"
+                  class="mask mask-star-2 bg-orange-400"
+                />
+                <input
+                  type="radio"
+                  name="rating-2"
+                  class="mask mask-star-2 bg-orange-400"
+                  checked
+                />
+                <input
+                  type="radio"
+                  name="rating-2"
+                  class="mask mask-star-2 bg-orange-400"
+                />
+              </div>
+
+              <p
+                class="text-sm text-[#23A6F0] font-semibold tracking-[0.2px] leading-6 text-center"
+              >
+                Regina Miles
+              </p>
+              <p
+                class="text-sm leading-6 tracking-[0.2px] text-[#252B42] text-center"
+              >
+                Banker
+              </p>
+            </div>
+          </div>
+
+          <!-- single card -->
+          <div
+            class="space-y-7 cursor-pointer py-10 px-9 rounded-[5px] border border-[#DEDEDE]"
+          >
+            <figure class="flex justify-center items-center">
+              <img
+                class="sm:w-[150px] w-[250px] object-cover border border-[#BDBDBD] rounded-full"
+                src="./images/others/user-2.png"
+                alt=""
+              />
+            </figure>
+
+            <!-- card desc -->
+            <div class="space-y-4 flex flex-col items-center justify-center">
+              <p class="tracking-[0.2px] text-[#6C6C6C] text-center">
+                Slate helps you see how many more days you need to work to reach
+                your financial goal for the month and year.
+              </p>
+
+              <div class="rating">
+                <input
+                  type="radio"
+                  name="rating-2"
+                  class="mask mask-star-2 bg-orange-400"
+                />
+                <input
+                  type="radio"
+                  name="rating-2"
+                  class="mask mask-star-2 bg-orange-400"
+                />
+                <input
+                  type="radio"
+                  name="rating-2"
+                  class="mask mask-star-2 bg-orange-400"
+                />
+                <input
+                  type="radio"
+                  name="rating-2"
+                  class="mask mask-star-2 bg-orange-400"
+                  checked
+                />
+                <input
+                  type="radio"
+                  name="rating-2"
+                  class="mask mask-star-2 bg-orange-400"
+                />
+              </div>
+
+              <p
+                class="text-sm text-[#23A6F0] font-semibold tracking-[0.2px] leading-6 text-center"
+              >
+                Regina Miles
+              </p>
+              <p
+                class="text-sm leading-6 tracking-[0.2px] text-[#252B42] text-center"
+              >
+                Banker
+              </p>
+            </div>
+          </div>
+
+          <!-- single card -->
+          <div
+            class="space-y-7 cursor-pointer py-10 px-9 rounded-[5px] border border-[#DEDEDE]"
+          >
+            <figure class="flex justify-center items-center">
+              <img
+                class="sm:w-[150px] w-[250px] object-cover border border-[#BDBDBD] rounded-full"
+                src="./images/others/user-3.png"
+                alt=""
+              />
+            </figure>
+
+            <!-- card desc -->
+            <div class="space-y-4 flex flex-col items-center justify-center">
+              <p class="tracking-[0.2px] text-[#6C6C6C] text-center">
+                Slate helps you see how many more days you need to work to reach
+                your financial goal for the month and year.
+              </p>
+
+              <div class="rating">
+                <input
+                  type="radio"
+                  name="rating-2"
+                  class="mask mask-star-2 bg-orange-400"
+                />
+                <input
+                  type="radio"
+                  name="rating-2"
+                  class="mask mask-star-2 bg-orange-400"
+                />
+                <input
+                  type="radio"
+                  name="rating-2"
+                  class="mask mask-star-2 bg-orange-400"
+                />
+                <input
+                  type="radio"
+                  name="rating-2"
+                  class="mask mask-star-2 bg-orange-400"
+                  checked
+                />
+                <input
+                  type="radio"
+                  name="rating-2"
+                  class="mask mask-star-2 bg-orange-400"
+                />
+              </div>
+
+              <p
+                class="text-sm text-[#23A6F0] font-semibold tracking-[0.2px] leading-6 text-center"
+              >
+                Regina Miles
+              </p>
+              <p
+                class="text-sm leading-6 tracking-[0.2px] text-[#252B42] text-center"
+              >
+                Banker
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- faq section -->
     </main>
     <p class="mt-20"></p>
   </body>
